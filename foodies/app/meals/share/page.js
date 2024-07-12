@@ -1,5 +1,7 @@
-import ImagePicker from '@/components/meals/image-picker.js'
 import styles from './page.module.css'
+
+import ImagePicker from '@/components/meals/image-picker.js'
+import MealsFormSubmit from '@/components/meals/meals-form-submit.js'
 import { shareMeal } from '@/lib/actions/formatMeals.js'
 
 export default function ShareMealPage () {
@@ -42,7 +44,8 @@ export default function ShareMealPage () {
           </p>
           <ImagePicker label='Your image' name='image' />
           <p className={styles.actions}>
-            <button type='submit'>Share Meal</button>
+            {/* <button type='submit'>Share Meal</button> */}
+            <MealsFormSubmit />
           </p>
         </form>
       </main>
