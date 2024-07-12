@@ -1,6 +1,6 @@
 import ImagePicker from '@/components/meals/image-picker.js'
 import styles from './page.module.css'
-import { shareMeal } from '@/lib/actions/meals.js'
+import { shareMeal } from '@/lib/actions/formatMeals.js'
 
 export default function ShareMealPage () {
   return (

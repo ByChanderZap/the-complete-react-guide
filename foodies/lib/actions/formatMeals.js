@@ -1,14 +1,18 @@
 'use server'
 
+import { redirect } from 'next/navigation.js'
+import { saveMeal } from '../meals.js'
+
 export const shareMeal = async (formData) => {
   const meal = {
     title: formData.get('title'),
-    summmary: formData.get('summary'),
+    summary: formData.get('summary'),
     instructions: formData.get('summary'),
     image: formData.get('image'),
     creator: formData.get('name'),
     creator_email: formData.get('email')
   }
 
-  console.log(meal)
+  await saveMeal(meal)
+  redirect('/meals')
 }
