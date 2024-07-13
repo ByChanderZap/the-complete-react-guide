@@ -1,7 +1,7 @@
-export default function NewsPage() {
+export default function NewsPage () {
   return (
-  <>
+    <>
 
-  </>
+    </>
   )
 }
