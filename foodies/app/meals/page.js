@@ -5,6 +5,11 @@ import { getMeals } from '@/lib/meals.js'
 import { Suspense } from 'react'
 import LoadingOut from './loading-out.js'
 
+export const metadata = {
+  title: 'All Meals',
+  description: 'Browse the meal that you want to make!'
+}
+
 const LoadMeals = async () => {
   const meals = await getMeals()
   return <MealsGrid meals={meals} />

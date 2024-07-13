@@ -4,6 +4,19 @@ import Image from 'next/image.js'
 import { getMeal } from '@/lib/meals.js'
 import { notFound } from 'next/navigation.js'
 
+export async function generateMetadata ({ params }) {
+  const data = getMeal(params.mealSlug)
+
+  if (!data) {
+    notFound()
+  }
+
+  return {
+    title: data.title,
+    description: data.summary
+  }
+}
+
 export default function MealDetails ({ params }) {
   const data = getMeal(params.mealSlug)
 
@@ -24,7 +37,7 @@ export default function MealDetails ({ params }) {
           <p className={styles.creator}>
             By <a href={`mailto:${data.creator_email}`}> {data.creator} </a>
           </p>
-          <p className={styles.sumary}>
+          <p className={styles.summary}>
             {data.summary}
           </p>
         </div>
