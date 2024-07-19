@@ -1,6 +1,6 @@
 import sql from 'better-sqlite3'
 
-const db = new sql('posts.db')
+const db = sql('posts.db')
 
 function initDb () {
   db.exec(`
