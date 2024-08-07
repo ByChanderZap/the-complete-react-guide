@@ -19,7 +19,7 @@
     "standard": "^17.1.0"
   },
   "eslintConfig": {
-    "extends":[
+    "extends": [
       "./node_modules/standard/eslintrc.json"
     ]
   }
