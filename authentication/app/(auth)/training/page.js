@@ -1,6 +1,14 @@
+import { checkAuth } from '@/lib/auth.js'
 import { getTrainings } from '@/lib/training'
+import { redirect } from 'next/navigation.js'
 
 export default async function TrainingPage () {
+  const result = await checkAuth()
+
+  if (!result.user) {
+    return redirect('/')
+  }
+
   const trainingSessions = getTrainings()
 
   return (
